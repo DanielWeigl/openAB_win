@@ -26,7 +26,7 @@ Partial Class frmAkademischerTitel
         Me.AkademischerTitelBindingSource = New System.Windows.Forms.BindingSource()
         Me.grd = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.colAkademischerTitel = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colAkademischerTitel1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.btnAbbrechen = New System.Windows.Forms.Button()
         CType(Me.AkademischerTitelBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grd, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,19 +65,19 @@ Partial Class frmAkademischerTitel
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colAkademischerTitel})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colAkademischerTitel1})
         Me.GridView1.GridControl = Me.grd
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom
         Me.GridView1.OptionsView.ShowGroupPanel = False
         '
-        'colAkademischerTitel
+        'colAkademischerTitel1
         '
-        Me.colAkademischerTitel.FieldName = "AkademischerTitel"
-        Me.colAkademischerTitel.Name = "colAkademischerTitel"
-        Me.colAkademischerTitel.ToolTip = "Bearbeiten oder fügen sie einen akademischen Titel hinzu"
-        Me.colAkademischerTitel.Visible = True
-        Me.colAkademischerTitel.VisibleIndex = 0
+        Me.colAkademischerTitel1.Caption = "Akademischer Titel"
+        Me.colAkademischerTitel1.FieldName = "AkademischerTitel1"
+        Me.colAkademischerTitel1.Name = "colAkademischerTitel1"
+        Me.colAkademischerTitel1.Visible = True
+        Me.colAkademischerTitel1.VisibleIndex = 0
         '
         'btnAbbrechen
         '
@@ -112,5 +112,5 @@ Partial Class frmAkademischerTitel
     Friend WithEvents grd As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents btnAbbrechen As System.Windows.Forms.Button
-    Friend WithEvents colAkademischerTitel As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colAkademischerTitel1 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

@@ -24,6 +24,7 @@
 
         End Using
     End Sub
+   
 
     Private Sub grd_DoubleClick(sender As Object, e As EventArgs) Handles grdview.DoubleClick
         Dim k As Kontakt = grdview.GetFocusedRow
@@ -41,6 +42,12 @@
 
     Private Sub LänderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LänderToolStripMenuItem.Click
         Dim frm As New frmLaender
+        frm.ShowDialog()
+        DataBind()
+    End Sub
+
+    Private Sub AkademischerTitelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AkademischerTitelToolStripMenuItem.Click
+        Dim frm As New frmAkademischerTitel
         frm.ShowDialog()
         DataBind()
     End Sub

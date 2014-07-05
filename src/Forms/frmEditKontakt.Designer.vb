@@ -100,7 +100,7 @@ Partial Class frmEditKontakt
         'VorNameLabel1
         '
         VorNameLabel1.AutoSize = True
-        VorNameLabel1.Location = New System.Drawing.Point(46, 55)
+        VorNameLabel1.Location = New System.Drawing.Point(51, 29)
         VorNameLabel1.Name = "VorNameLabel1"
         VorNameLabel1.Size = New System.Drawing.Size(57, 13)
         VorNameLabel1.TabIndex = 21
@@ -109,7 +109,7 @@ Partial Class frmEditKontakt
         'NachNameLabel
         '
         NachNameLabel.AutoSize = True
-        NachNameLabel.Location = New System.Drawing.Point(36, 85)
+        NachNameLabel.Location = New System.Drawing.Point(41, 59)
         NachNameLabel.Name = "NachNameLabel"
         NachNameLabel.Size = New System.Drawing.Size(67, 13)
         NachNameLabel.TabIndex = 22
@@ -118,7 +118,7 @@ Partial Class frmEditKontakt
         'MobilTelefonLabel
         '
         MobilTelefonLabel.AutoSize = True
-        MobilTelefonLabel.Location = New System.Drawing.Point(29, 148)
+        MobilTelefonLabel.Location = New System.Drawing.Point(34, 122)
         MobilTelefonLabel.Name = "MobilTelefonLabel"
         MobilTelefonLabel.Size = New System.Drawing.Size(74, 13)
         MobilTelefonLabel.TabIndex = 23
@@ -147,7 +147,7 @@ Partial Class frmEditKontakt
         Me.AdresseOrtTextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "AdresseOrt", True))
         Me.AdresseOrtTextEdit1.Location = New System.Drawing.Point(111, 66)
         Me.AdresseOrtTextEdit1.Name = "AdresseOrtTextEdit1"
-        Me.AdresseOrtTextEdit1.Size = New System.Drawing.Size(100, 20)
+        Me.AdresseOrtTextEdit1.Size = New System.Drawing.Size(160, 20)
         Me.AdresseOrtTextEdit1.TabIndex = 19
         '
         'AdressePLZTextEdit
@@ -155,7 +155,7 @@ Partial Class frmEditKontakt
         Me.AdressePLZTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "AdressePLZ", True))
         Me.AdressePLZTextEdit.Location = New System.Drawing.Point(111, 94)
         Me.AdressePLZTextEdit.Name = "AdressePLZTextEdit"
-        Me.AdressePLZTextEdit.Size = New System.Drawing.Size(100, 20)
+        Me.AdressePLZTextEdit.Size = New System.Drawing.Size(78, 20)
         Me.AdressePLZTextEdit.TabIndex = 20
         '
         'AdresseStrasseTextEdit
@@ -163,13 +163,13 @@ Partial Class frmEditKontakt
         Me.AdresseStrasseTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "AdresseStrasse", True))
         Me.AdresseStrasseTextEdit.Location = New System.Drawing.Point(111, 36)
         Me.AdresseStrasseTextEdit.Name = "AdresseStrasseTextEdit"
-        Me.AdresseStrasseTextEdit.Size = New System.Drawing.Size(100, 20)
+        Me.AdresseStrasseTextEdit.Size = New System.Drawing.Size(160, 20)
         Me.AdresseStrasseTextEdit.TabIndex = 21
         '
         'VorNameTextEdit1
         '
         Me.VorNameTextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "VorName", True))
-        Me.VorNameTextEdit1.Location = New System.Drawing.Point(109, 52)
+        Me.VorNameTextEdit1.Location = New System.Drawing.Point(114, 26)
         Me.VorNameTextEdit1.Name = "VorNameTextEdit1"
         Me.VorNameTextEdit1.Size = New System.Drawing.Size(166, 20)
         Me.VorNameTextEdit1.TabIndex = 22
@@ -177,7 +177,7 @@ Partial Class frmEditKontakt
         'NachNameTextEdit
         '
         Me.NachNameTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "NachName", True))
-        Me.NachNameTextEdit.Location = New System.Drawing.Point(109, 82)
+        Me.NachNameTextEdit.Location = New System.Drawing.Point(114, 56)
         Me.NachNameTextEdit.Name = "NachNameTextEdit"
         Me.NachNameTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.NachNameTextEdit.TabIndex = 23
@@ -185,7 +185,7 @@ Partial Class frmEditKontakt
         'MobilTelefonTextEdit
         '
         Me.MobilTelefonTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "MobilTelefon", True))
-        Me.MobilTelefonTextEdit.Location = New System.Drawing.Point(109, 145)
+        Me.MobilTelefonTextEdit.Location = New System.Drawing.Point(114, 119)
         Me.MobilTelefonTextEdit.Name = "MobilTelefonTextEdit"
         Me.MobilTelefonTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.MobilTelefonTextEdit.TabIndex = 24
@@ -198,9 +198,9 @@ Partial Class frmEditKontakt
         Me.GroupBox1.Controls.Add(AdressePLZLabel)
         Me.GroupBox1.Controls.Add(Me.AdresseStrasseTextEdit)
         Me.GroupBox1.Controls.Add(AdresseStrasseLabel)
-        Me.GroupBox1.Location = New System.Drawing.Point(421, 25)
+        Me.GroupBox1.Location = New System.Drawing.Point(412, 29)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(238, 182)
+        Me.GroupBox1.Size = New System.Drawing.Size(291, 182)
         Me.GroupBox1.TabIndex = 25
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Adressdaten"
@@ -208,7 +208,7 @@ Partial Class frmEditKontakt
         'EmailFirmaLabel
         '
         EmailFirmaLabel.AutoSize = True
-        EmailFirmaLabel.Location = New System.Drawing.Point(40, 177)
+        EmailFirmaLabel.Location = New System.Drawing.Point(45, 151)
         EmailFirmaLabel.Name = "EmailFirmaLabel"
         EmailFirmaLabel.Size = New System.Drawing.Size(63, 13)
         EmailFirmaLabel.TabIndex = 25
@@ -217,7 +217,7 @@ Partial Class frmEditKontakt
         'EmailFirmaTextEdit
         '
         Me.EmailFirmaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "EmailFirma", True))
-        Me.EmailFirmaTextEdit.Location = New System.Drawing.Point(109, 174)
+        Me.EmailFirmaTextEdit.Location = New System.Drawing.Point(114, 148)
         Me.EmailFirmaTextEdit.Name = "EmailFirmaTextEdit"
         Me.EmailFirmaTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.EmailFirmaTextEdit.TabIndex = 26
@@ -225,7 +225,7 @@ Partial Class frmEditKontakt
         'EmailPrivatLabel
         '
         EmailPrivatLabel.AutoSize = True
-        EmailPrivatLabel.Location = New System.Drawing.Point(38, 207)
+        EmailPrivatLabel.Location = New System.Drawing.Point(43, 181)
         EmailPrivatLabel.Name = "EmailPrivatLabel"
         EmailPrivatLabel.Size = New System.Drawing.Size(65, 13)
         EmailPrivatLabel.TabIndex = 26
@@ -234,7 +234,7 @@ Partial Class frmEditKontakt
         'EmailPrivatTextEdit
         '
         Me.EmailPrivatTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "EmailPrivat", True))
-        Me.EmailPrivatTextEdit.Location = New System.Drawing.Point(109, 204)
+        Me.EmailPrivatTextEdit.Location = New System.Drawing.Point(114, 178)
         Me.EmailPrivatTextEdit.Name = "EmailPrivatTextEdit"
         Me.EmailPrivatTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.EmailPrivatTextEdit.TabIndex = 27
@@ -242,7 +242,7 @@ Partial Class frmEditKontakt
         'TelefonLabel
         '
         TelefonLabel.AutoSize = True
-        TelefonLabel.Location = New System.Drawing.Point(57, 118)
+        TelefonLabel.Location = New System.Drawing.Point(62, 92)
         TelefonLabel.Name = "TelefonLabel"
         TelefonLabel.Size = New System.Drawing.Size(46, 13)
         TelefonLabel.TabIndex = 27
@@ -251,7 +251,7 @@ Partial Class frmEditKontakt
         'TelefonTextEdit
         '
         Me.TelefonTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "Telefon", True))
-        Me.TelefonTextEdit.Location = New System.Drawing.Point(109, 115)
+        Me.TelefonTextEdit.Location = New System.Drawing.Point(114, 89)
         Me.TelefonTextEdit.Name = "TelefonTextEdit"
         Me.TelefonTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.TelefonTextEdit.TabIndex = 28
@@ -259,7 +259,7 @@ Partial Class frmEditKontakt
         'HomePageLabel
         '
         HomePageLabel.AutoSize = True
-        HomePageLabel.Location = New System.Drawing.Point(37, 233)
+        HomePageLabel.Location = New System.Drawing.Point(42, 207)
         HomePageLabel.Name = "HomePageLabel"
         HomePageLabel.Size = New System.Drawing.Size(66, 13)
         HomePageLabel.TabIndex = 28
@@ -268,7 +268,7 @@ Partial Class frmEditKontakt
         'HomePageTextEdit
         '
         Me.HomePageTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "HomePage", True))
-        Me.HomePageTextEdit.Location = New System.Drawing.Point(109, 230)
+        Me.HomePageTextEdit.Location = New System.Drawing.Point(114, 204)
         Me.HomePageTextEdit.Name = "HomePageTextEdit"
         Me.HomePageTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.HomePageTextEdit.TabIndex = 29

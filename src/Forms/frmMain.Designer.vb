@@ -51,6 +51,7 @@ Partial Class frmMain
         Me.NeuenKontaktErstellenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EinstellungenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LänderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AkademischerTitelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.grd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grdview, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -247,7 +248,7 @@ Partial Class frmMain
         '
         'EinstellungenToolStripMenuItem
         '
-        Me.EinstellungenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LänderToolStripMenuItem})
+        Me.EinstellungenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LänderToolStripMenuItem, Me.AkademischerTitelToolStripMenuItem})
         Me.EinstellungenToolStripMenuItem.Name = "EinstellungenToolStripMenuItem"
         Me.EinstellungenToolStripMenuItem.Size = New System.Drawing.Size(90, 20)
         Me.EinstellungenToolStripMenuItem.Text = "Einstellungen"
@@ -255,8 +256,14 @@ Partial Class frmMain
         'LänderToolStripMenuItem
         '
         Me.LänderToolStripMenuItem.Name = "LänderToolStripMenuItem"
-        Me.LänderToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LänderToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
         Me.LänderToolStripMenuItem.Text = "Länder"
+        '
+        'AkademischerTitelToolStripMenuItem
+        '
+        Me.AkademischerTitelToolStripMenuItem.Name = "AkademischerTitelToolStripMenuItem"
+        Me.AkademischerTitelToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.AkademischerTitelToolStripMenuItem.Text = "Akademischer Titel"
         '
         'frmMain
         '
@@ -306,5 +313,6 @@ Partial Class frmMain
     Friend WithEvents NeuenKontaktErstellenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EinstellungenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LänderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AkademischerTitelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -14,14 +14,12 @@
     Private Sub NeuenKontaktErstellenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NeuenKontaktErstellenToolStripMenuItem.Click
         Using ctx = New openABEntities
             Dim neu As New Kontakt
-            Dim frm As New frmEditKontakt(neu)
-
+            Dim frm As New frmEditKontakt(neu, ctx)
             If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
                 ctx.Kontakts.Add(neu)
                 ctx.SaveChanges()
                 grd.RefreshDataSource()
             End If
-
         End Using
     End Sub
 
@@ -29,7 +27,7 @@
         Dim k As Kontakt = grdview.GetFocusedRow
         If k IsNot Nothing Then
             Using ctx = New openABEntities
-                Dim frm As New frmEditKontakt(k)
+                Dim frm As New frmEditKontakt(k, ctx)
 
                 If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
                     ctx.SaveChanges()

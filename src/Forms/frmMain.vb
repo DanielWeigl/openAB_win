@@ -1,10 +1,9 @@
 ﻿Public Class frmMain
-
+    Private _ctx As New openABEntities
     Sub DataBind()
-        Using ctx = New openABEntities
-            Dim k = (From i In ctx.Kontakts)
-            grd.DataSource = k.ToList
-        End Using
+        Dim k = (From i In _ctx.Kontakts)
+        grd.DataSource = k.ToList
+
     End Sub
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -27,14 +26,13 @@
     Private Sub grd_DoubleClick(sender As Object, e As EventArgs) Handles grdview.DoubleClick
         Dim k As Kontakt = grdview.GetFocusedRow
         If k IsNot Nothing Then
-            Using ctx = New openABEntities
-                Dim frm As New frmEditKontakt(k, ctx)
+            Dim frm As New frmEditKontakt(k, _ctx)
 
-                If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
-                    ctx.SaveChanges()
-                    DataBind()
-                End If
-            End Using
+            If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+                _ctx.setLog()
+                _ctx.SaveChanges()
+            End If
+
         End If
     End Sub
 
@@ -48,5 +46,13 @@
         Dim frm As New frmAkademischerTitel
         frm.ShowDialog()
         DataBind()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        DataBind()
+    End Sub
+
+    Private Sub grdview_RowUpdated(sender As Object, e As DevExpress.XtraGrid.Views.Base.RowObjectEventArgs) Handles grdview.RowUpdated
+        _ctx.SaveChanges()
     End Sub
 End Class

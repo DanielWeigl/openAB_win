@@ -22,6 +22,7 @@ Partial Class frmEditKontakt
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim AdresseOrtLabel1 As System.Windows.Forms.Label
         Dim AdressePLZLabel As System.Windows.Forms.Label
         Dim AdresseStrasseLabel As System.Windows.Forms.Label
@@ -33,19 +34,19 @@ Partial Class frmEditKontakt
         Dim NachNameLabel As System.Windows.Forms.Label
         Dim VorNameLabel1 As System.Windows.Forms.Label
         Dim AkademischerTitel1Label As System.Windows.Forms.Label
-        Dim FK_LandLabel As System.Windows.Forms.Label
+        Dim BezeichnungLabel As System.Windows.Forms.Label
         Me.btnSpeichern = New System.Windows.Forms.Button()
         Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.AdresseOrtTextEdit1 = New DevExpress.XtraEditors.TextEdit()
-        Me.KontaktBindingSource = New System.Windows.Forms.BindingSource()
+        Me.KontaktBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AdressePLZTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.AdresseStrasseTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.FK_LandSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.LandBindingSource = New System.Windows.Forms.BindingSource()
+        Me.cmbLand = New System.Windows.Forms.ComboBox()
+        Me.LandBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.AkademischerTitel1ComboBox = New System.Windows.Forms.ComboBox()
-        Me.AkademischerTitelBindingSource = New System.Windows.Forms.BindingSource()
+        Me.AkademischerTitelBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HomePageTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.TelefonTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.EmailPrivatTextEdit = New DevExpress.XtraEditors.TextEdit()
@@ -64,13 +65,12 @@ Partial Class frmEditKontakt
         NachNameLabel = New System.Windows.Forms.Label()
         VorNameLabel1 = New System.Windows.Forms.Label()
         AkademischerTitel1Label = New System.Windows.Forms.Label()
-        FK_LandLabel = New System.Windows.Forms.Label()
+        BezeichnungLabel = New System.Windows.Forms.Label()
         CType(Me.AdresseOrtTextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AdressePLZTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AdresseStrasseTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.FK_LandSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LandBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.AkademischerTitelBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,14 +182,14 @@ Partial Class frmEditKontakt
         AkademischerTitel1Label.TabIndex = 43
         AkademischerTitel1Label.Text = "Akademischer Titel:"
         '
-        'FK_LandLabel
+        'BezeichnungLabel
         '
-        FK_LandLabel.AutoSize = True
-        FK_LandLabel.Location = New System.Drawing.Point(55, 158)
-        FK_LandLabel.Name = "FK_LandLabel"
-        FK_LandLabel.Size = New System.Drawing.Size(50, 13)
-        FK_LandLabel.TabIndex = 22
-        FK_LandLabel.Text = "FK Land:"
+        BezeichnungLabel.AutoSize = True
+        BezeichnungLabel.Location = New System.Drawing.Point(71, 127)
+        BezeichnungLabel.Name = "BezeichnungLabel"
+        BezeichnungLabel.Size = New System.Drawing.Size(34, 13)
+        BezeichnungLabel.TabIndex = 23
+        BezeichnungLabel.Text = "Land:"
         '
         'btnSpeichern
         '
@@ -241,8 +241,8 @@ Partial Class frmEditKontakt
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(FK_LandLabel)
-        Me.GroupBox1.Controls.Add(Me.FK_LandSpinEdit)
+        Me.GroupBox1.Controls.Add(BezeichnungLabel)
+        Me.GroupBox1.Controls.Add(Me.cmbLand)
         Me.GroupBox1.Controls.Add(Me.AdresseOrtTextEdit1)
         Me.GroupBox1.Controls.Add(AdresseOrtLabel1)
         Me.GroupBox1.Controls.Add(Me.AdressePLZTextEdit)
@@ -251,20 +251,23 @@ Partial Class frmEditKontakt
         Me.GroupBox1.Controls.Add(AdresseStrasseLabel)
         Me.GroupBox1.Location = New System.Drawing.Point(421, 25)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(304, 196)
+        Me.GroupBox1.Size = New System.Drawing.Size(338, 224)
         Me.GroupBox1.TabIndex = 25
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Adressdaten"
         '
-        'FK_LandSpinEdit
+        'cmbLand
         '
-        Me.FK_LandSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "FK_Land", True))
-        Me.FK_LandSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.FK_LandSpinEdit.Location = New System.Drawing.Point(111, 155)
-        Me.FK_LandSpinEdit.Name = "FK_LandSpinEdit"
-        Me.FK_LandSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.FK_LandSpinEdit.Size = New System.Drawing.Size(100, 20)
-        Me.FK_LandSpinEdit.TabIndex = 23
+        Me.cmbLand.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.KontaktBindingSource, "FK_Land", True))
+        Me.cmbLand.DataSource = Me.LandBindingSource
+        Me.cmbLand.DisplayMember = "Bezeichnung"
+        Me.cmbLand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbLand.FormattingEnabled = True
+        Me.cmbLand.Location = New System.Drawing.Point(111, 124)
+        Me.cmbLand.Name = "cmbLand"
+        Me.cmbLand.Size = New System.Drawing.Size(161, 21)
+        Me.cmbLand.TabIndex = 24
+        Me.cmbLand.ValueMember = "ID"
         '
         'LandBindingSource
         '
@@ -382,7 +385,6 @@ Partial Class frmEditKontakt
         CType(Me.AdresseStrasseTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.FK_LandSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LandBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -415,5 +417,5 @@ Partial Class frmEditKontakt
     Friend WithEvents AkademischerTitel1ComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents AkademischerTitelBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents LandBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents FK_LandSpinEdit As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents cmbLand As System.Windows.Forms.ComboBox
 End Class

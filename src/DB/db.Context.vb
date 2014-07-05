@@ -10,6 +10,9 @@
 Imports System
 Imports System.Data.Entity
 Imports System.Data.Entity.Infrastructure
+Imports System.Data.Objects
+Imports System.Data.Objects.DataClasses
+Imports System.Linq
 
 Partial Public Class openABEntities
     Inherits DbContext
@@ -30,5 +33,9 @@ Partial Public Class openABEntities
     Public Property Institutions() As DbSet(Of Institution)
     Public Property Kontakts() As DbSet(Of Kontakt)
     Public Property Lands() As DbSet(Of Land)
+
+    Public Overridable Function setLog() As Integer
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("setLog")
+    End Function
 
 End Class

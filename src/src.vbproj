@@ -102,50 +102,56 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AkademischerTitel.vb">
+    <Compile Include="DB\AkademischerTitel.vb">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Anrede.vb">
+    <Compile Include="DB\Anrede.vb">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Berufsfunktion.vb">
+    <Compile Include="DB\Berufsfunktion.vb">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Berufstitel.vb">
+    <Compile Include="DB\Berufstitel.vb">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="db.Context.vb">
+    <Compile Include="DB\db.Context.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="db.Designer.vb">
+    <Compile Include="DB\db.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db.edmx</DependentUpon>
     </Compile>
-    <Compile Include="db.vb">
+    <Compile Include="DB\db.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Firma.vb">
+    <Compile Include="DB\Firma.vb">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.vb">
+    <Compile Include="Forms\frmEditKontakt.Designer.vb">
+      <DependentUpon>frmEditKontakt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEditKontakt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.vb">
+    <Compile Include="Forms\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Institution.vb">
+    <Compile Include="DB\Institution.vb">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Kontakt.vb">
+    <Compile Include="DB\Kontakt.vb">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Land.vb">
+    <Compile Include="DB\Land.vb">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -165,7 +171,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Forms\frmEditKontakt.resx">
+      <DependentUpon>frmEditKontakt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
@@ -177,19 +186,19 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="db.edmx">
+    <EntityDeploy Include="DB\db.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>db.Designer.vb</LastGenOutput>
     </EntityDeploy>
-    <None Include="db.Context.tt">
+    <None Include="DB\db.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>db.edmx</DependentUpon>
       <LastGenOutput>db.Context.vb</LastGenOutput>
     </None>
-    <None Include="db.edmx.diagram">
+    <None Include="DB\db.edmx.diagram">
       <DependentUpon>db.edmx</DependentUpon>
     </None>
-    <None Include="db.tt">
+    <None Include="DB\db.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>db.edmx</DependentUpon>
       <LastGenOutput>db.vb</LastGenOutput>
@@ -198,6 +207,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Kontakt.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

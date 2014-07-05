@@ -22,7 +22,6 @@ Partial Class frmEditKontakt
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim VorNameLabel As System.Windows.Forms.Label
         Dim AdresseOrtLabel1 As System.Windows.Forms.Label
         Dim AdressePLZLabel As System.Windows.Forms.Label
         Dim AdresseStrasseLabel As System.Windows.Forms.Label
@@ -32,10 +31,9 @@ Partial Class frmEditKontakt
         Dim EmailFirmaLabel As System.Windows.Forms.Label
         Dim EmailPrivatLabel As System.Windows.Forms.Label
         Dim TelefonLabel As System.Windows.Forms.Label
+        Dim HomePageLabel As System.Windows.Forms.Label
         Me.btnSpeichern = New System.Windows.Forms.Button()
         Me.btnAbbrechen = New System.Windows.Forms.Button()
-        Me.VorNameTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.KontaktBindingSource = New System.Windows.Forms.BindingSource()
         Me.AdresseOrtTextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.AdressePLZTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.AdresseStrasseTextEdit = New DevExpress.XtraEditors.TextEdit()
@@ -46,7 +44,8 @@ Partial Class frmEditKontakt
         Me.EmailFirmaTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.EmailPrivatTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.TelefonTextEdit = New DevExpress.XtraEditors.TextEdit()
-        VorNameLabel = New System.Windows.Forms.Label()
+        Me.HomePageTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.KontaktBindingSource = New System.Windows.Forms.BindingSource()
         AdresseOrtLabel1 = New System.Windows.Forms.Label()
         AdressePLZLabel = New System.Windows.Forms.Label()
         AdresseStrasseLabel = New System.Windows.Forms.Label()
@@ -56,8 +55,7 @@ Partial Class frmEditKontakt
         EmailFirmaLabel = New System.Windows.Forms.Label()
         EmailPrivatLabel = New System.Windows.Forms.Label()
         TelefonLabel = New System.Windows.Forms.Label()
-        CType(Me.VorNameTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        HomePageLabel = New System.Windows.Forms.Label()
         CType(Me.AdresseOrtTextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AdressePLZTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AdresseStrasseTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,16 +66,9 @@ Partial Class frmEditKontakt
         CType(Me.EmailFirmaTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmailPrivatTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TelefonTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HomePageTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'VorNameLabel
-        '
-        VorNameLabel.AutoSize = True
-        VorNameLabel.Location = New System.Drawing.Point(48, 121)
-        VorNameLabel.Name = "VorNameLabel"
-        VorNameLabel.Size = New System.Drawing.Size(57, 13)
-        VorNameLabel.TabIndex = 16
-        VorNameLabel.Text = "Vor Name:"
         '
         'AdresseOrtLabel1
         '
@@ -151,18 +142,6 @@ Partial Class frmEditKontakt
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
-        'VorNameTextEdit
-        '
-        Me.VorNameTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "VorName", True))
-        Me.VorNameTextEdit.Location = New System.Drawing.Point(111, 120)
-        Me.VorNameTextEdit.Name = "VorNameTextEdit"
-        Me.VorNameTextEdit.Size = New System.Drawing.Size(100, 20)
-        Me.VorNameTextEdit.TabIndex = 17
-        '
-        'KontaktBindingSource
-        '
-        Me.KontaktBindingSource.DataSource = GetType(src.Kontakt)
-        '
         'AdresseOrtTextEdit1
         '
         Me.AdresseOrtTextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "AdresseOrt", True))
@@ -192,7 +171,7 @@ Partial Class frmEditKontakt
         Me.VorNameTextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "VorName", True))
         Me.VorNameTextEdit1.Location = New System.Drawing.Point(109, 52)
         Me.VorNameTextEdit1.Name = "VorNameTextEdit1"
-        Me.VorNameTextEdit1.Size = New System.Drawing.Size(100, 20)
+        Me.VorNameTextEdit1.Size = New System.Drawing.Size(166, 20)
         Me.VorNameTextEdit1.TabIndex = 22
         '
         'NachNameTextEdit
@@ -200,7 +179,7 @@ Partial Class frmEditKontakt
         Me.NachNameTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "NachName", True))
         Me.NachNameTextEdit.Location = New System.Drawing.Point(109, 82)
         Me.NachNameTextEdit.Name = "NachNameTextEdit"
-        Me.NachNameTextEdit.Size = New System.Drawing.Size(100, 20)
+        Me.NachNameTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.NachNameTextEdit.TabIndex = 23
         '
         'MobilTelefonTextEdit
@@ -208,14 +187,12 @@ Partial Class frmEditKontakt
         Me.MobilTelefonTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "MobilTelefon", True))
         Me.MobilTelefonTextEdit.Location = New System.Drawing.Point(109, 145)
         Me.MobilTelefonTextEdit.Name = "MobilTelefonTextEdit"
-        Me.MobilTelefonTextEdit.Size = New System.Drawing.Size(100, 20)
+        Me.MobilTelefonTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.MobilTelefonTextEdit.TabIndex = 24
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.AdresseOrtTextEdit1)
-        Me.GroupBox1.Controls.Add(Me.VorNameTextEdit)
-        Me.GroupBox1.Controls.Add(VorNameLabel)
         Me.GroupBox1.Controls.Add(AdresseOrtLabel1)
         Me.GroupBox1.Controls.Add(Me.AdressePLZTextEdit)
         Me.GroupBox1.Controls.Add(AdressePLZLabel)
@@ -242,7 +219,7 @@ Partial Class frmEditKontakt
         Me.EmailFirmaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "EmailFirma", True))
         Me.EmailFirmaTextEdit.Location = New System.Drawing.Point(109, 174)
         Me.EmailFirmaTextEdit.Name = "EmailFirmaTextEdit"
-        Me.EmailFirmaTextEdit.Size = New System.Drawing.Size(100, 20)
+        Me.EmailFirmaTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.EmailFirmaTextEdit.TabIndex = 26
         '
         'EmailPrivatLabel
@@ -259,7 +236,7 @@ Partial Class frmEditKontakt
         Me.EmailPrivatTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "EmailPrivat", True))
         Me.EmailPrivatTextEdit.Location = New System.Drawing.Point(109, 204)
         Me.EmailPrivatTextEdit.Name = "EmailPrivatTextEdit"
-        Me.EmailPrivatTextEdit.Size = New System.Drawing.Size(100, 20)
+        Me.EmailPrivatTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.EmailPrivatTextEdit.TabIndex = 27
         '
         'TelefonLabel
@@ -276,14 +253,37 @@ Partial Class frmEditKontakt
         Me.TelefonTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "Telefon", True))
         Me.TelefonTextEdit.Location = New System.Drawing.Point(109, 115)
         Me.TelefonTextEdit.Name = "TelefonTextEdit"
-        Me.TelefonTextEdit.Size = New System.Drawing.Size(100, 20)
+        Me.TelefonTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.TelefonTextEdit.TabIndex = 28
+        '
+        'HomePageLabel
+        '
+        HomePageLabel.AutoSize = True
+        HomePageLabel.Location = New System.Drawing.Point(37, 233)
+        HomePageLabel.Name = "HomePageLabel"
+        HomePageLabel.Size = New System.Drawing.Size(66, 13)
+        HomePageLabel.TabIndex = 28
+        HomePageLabel.Text = "Home Page:"
+        '
+        'HomePageTextEdit
+        '
+        Me.HomePageTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "HomePage", True))
+        Me.HomePageTextEdit.Location = New System.Drawing.Point(109, 230)
+        Me.HomePageTextEdit.Name = "HomePageTextEdit"
+        Me.HomePageTextEdit.Size = New System.Drawing.Size(166, 20)
+        Me.HomePageTextEdit.TabIndex = 29
+        '
+        'KontaktBindingSource
+        '
+        Me.KontaktBindingSource.DataSource = GetType(src.Kontakt)
         '
         'frmEditKontakt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(724, 280)
+        Me.ClientSize = New System.Drawing.Size(724, 283)
+        Me.Controls.Add(HomePageLabel)
+        Me.Controls.Add(Me.HomePageTextEdit)
         Me.Controls.Add(TelefonLabel)
         Me.Controls.Add(Me.TelefonTextEdit)
         Me.Controls.Add(EmailPrivatLabel)
@@ -301,8 +301,6 @@ Partial Class frmEditKontakt
         Me.Controls.Add(Me.btnSpeichern)
         Me.Name = "frmEditKontakt"
         Me.Text = "Kontakt bearbeiten"
-        CType(Me.VorNameTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AdresseOrtTextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AdressePLZTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AdresseStrasseTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -314,6 +312,8 @@ Partial Class frmEditKontakt
         CType(Me.EmailFirmaTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmailPrivatTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TelefonTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HomePageTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -321,7 +321,6 @@ Partial Class frmEditKontakt
     Friend WithEvents KontaktBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents btnSpeichern As System.Windows.Forms.Button
     Friend WithEvents btnAbbrechen As System.Windows.Forms.Button
-    Friend WithEvents VorNameTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents AdresseOrtTextEdit1 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents AdressePLZTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents AdresseStrasseTextEdit As DevExpress.XtraEditors.TextEdit
@@ -332,4 +331,5 @@ Partial Class frmEditKontakt
     Friend WithEvents EmailFirmaTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents EmailPrivatTextEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents TelefonTextEdit As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents HomePageTextEdit As DevExpress.XtraEditors.TextEdit
 End Class

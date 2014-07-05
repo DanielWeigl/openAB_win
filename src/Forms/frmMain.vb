@@ -6,4 +6,8 @@
             grd.DataSource = k.ToList
         End Using
     End Sub
+
+    Private Sub NeuenKontaktErstellenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NeuenKontaktErstellenToolStripMenuItem.Click
+        frmEditKontakt.Show()
+    End Sub
 End Class

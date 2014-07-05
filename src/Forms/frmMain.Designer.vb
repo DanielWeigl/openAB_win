@@ -23,13 +23,10 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.grd = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.DateiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.KontaktToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NeuenKontaktErstellenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KontaktBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colID = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colVorName = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colNachName = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -49,10 +46,14 @@ Partial Class frmMain
         Me.colEmailFirma = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colHomePage = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colFirmas = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.DateiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.KontaktToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NeuenKontaktErstellenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.grd, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grd
@@ -62,12 +63,16 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grd.Cursor = System.Windows.Forms.Cursors.Default
         Me.grd.DataSource = Me.KontaktBindingSource
-        Me.grd.Location = New System.Drawing.Point(12, 100)
+        Me.grd.Location = New System.Drawing.Point(12, 142)
         Me.grd.MainView = Me.GridView1
         Me.grd.Name = "grd"
-        Me.grd.Size = New System.Drawing.Size(1065, 449)
+        Me.grd.Size = New System.Drawing.Size(1065, 407)
         Me.grd.TabIndex = 0
         Me.grd.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'KontaktBindingSource
+        '
+        Me.KontaktBindingSource.DataSource = GetType(src.Kontakt)
         '
         'GridView1
         '
@@ -76,38 +81,6 @@ Partial Class frmMain
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowGroupPanel = False
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem, Me.KontaktToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1089, 24)
-        Me.MenuStrip1.TabIndex = 1
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'DateiToolStripMenuItem
-        '
-        Me.DateiToolStripMenuItem.Name = "DateiToolStripMenuItem"
-        Me.DateiToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
-        Me.DateiToolStripMenuItem.Text = "Datei"
-        '
-        'KontaktToolStripMenuItem
-        '
-        Me.KontaktToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NeuenKontaktErstellenToolStripMenuItem})
-        Me.KontaktToolStripMenuItem.Name = "KontaktToolStripMenuItem"
-        Me.KontaktToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.KontaktToolStripMenuItem.Text = "Kontakt"
-        '
-        'NeuenKontaktErstellenToolStripMenuItem
-        '
-        Me.NeuenKontaktErstellenToolStripMenuItem.Name = "NeuenKontaktErstellenToolStripMenuItem"
-        Me.NeuenKontaktErstellenToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.NeuenKontaktErstellenToolStripMenuItem.Text = "Neuen Kontakt erstellen"
-        '
-        'KontaktBindingSource
-        '
-        Me.KontaktBindingSource.DataSource = GetType(src.Kontakt)
         '
         'colID
         '
@@ -243,10 +216,39 @@ Partial Class frmMain
         Me.colFirmas.Visible = True
         Me.colFirmas.VisibleIndex = 6
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem, Me.KontaktToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1089, 24)
+        Me.MenuStrip1.TabIndex = 1
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'DateiToolStripMenuItem
+        '
+        Me.DateiToolStripMenuItem.Name = "DateiToolStripMenuItem"
+        Me.DateiToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
+        Me.DateiToolStripMenuItem.Text = "Datei"
+        '
+        'KontaktToolStripMenuItem
+        '
+        Me.KontaktToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NeuenKontaktErstellenToolStripMenuItem})
+        Me.KontaktToolStripMenuItem.Name = "KontaktToolStripMenuItem"
+        Me.KontaktToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
+        Me.KontaktToolStripMenuItem.Text = "Kontakt"
+        '
+        'NeuenKontaktErstellenToolStripMenuItem
+        '
+        Me.NeuenKontaktErstellenToolStripMenuItem.Name = "NeuenKontaktErstellenToolStripMenuItem"
+        Me.NeuenKontaktErstellenToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.NeuenKontaktErstellenToolStripMenuItem.Text = "Neuen Kontakt erstellen"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1089, 561)
         Me.Controls.Add(Me.grd)
         Me.Controls.Add(Me.MenuStrip1)
@@ -254,10 +256,10 @@ Partial Class frmMain
         Me.Name = "frmMain"
         Me.Text = "Adress Manager"
         CType(Me.grd, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

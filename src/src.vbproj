@@ -141,6 +141,12 @@
     <Compile Include="DB\Land.vb">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Einstellungen\frmBerufstitel.Designer.vb">
+      <DependentUpon>frmBerufstitel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Einstellungen\frmBerufstitel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Einstellungen\frmAkademischTitel.Designer.vb">
       <DependentUpon>frmAkademischTitel.vb</DependentUpon>
     </Compile>
@@ -183,6 +189,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Einstellungen\frmBerufstitel.resx">
+      <DependentUpon>frmBerufstitel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Einstellungen\frmAkademischTitel.resx">
       <DependentUpon>frmAkademischTitel.vb</DependentUpon>
     </EmbeddedResource>

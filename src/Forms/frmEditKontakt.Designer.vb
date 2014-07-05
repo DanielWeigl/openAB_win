@@ -124,6 +124,42 @@ Partial Class frmEditKontakt
         MobilTelefonLabel.TabIndex = 23
         MobilTelefonLabel.Text = "Mobil Telefon:"
         '
+        'EmailFirmaLabel
+        '
+        EmailFirmaLabel.AutoSize = True
+        EmailFirmaLabel.Location = New System.Drawing.Point(45, 151)
+        EmailFirmaLabel.Name = "EmailFirmaLabel"
+        EmailFirmaLabel.Size = New System.Drawing.Size(63, 13)
+        EmailFirmaLabel.TabIndex = 25
+        EmailFirmaLabel.Text = "Email Firma:"
+        '
+        'EmailPrivatLabel
+        '
+        EmailPrivatLabel.AutoSize = True
+        EmailPrivatLabel.Location = New System.Drawing.Point(43, 181)
+        EmailPrivatLabel.Name = "EmailPrivatLabel"
+        EmailPrivatLabel.Size = New System.Drawing.Size(65, 13)
+        EmailPrivatLabel.TabIndex = 26
+        EmailPrivatLabel.Text = "Email Privat:"
+        '
+        'TelefonLabel
+        '
+        TelefonLabel.AutoSize = True
+        TelefonLabel.Location = New System.Drawing.Point(62, 92)
+        TelefonLabel.Name = "TelefonLabel"
+        TelefonLabel.Size = New System.Drawing.Size(46, 13)
+        TelefonLabel.TabIndex = 27
+        TelefonLabel.Text = "Telefon:"
+        '
+        'HomePageLabel
+        '
+        HomePageLabel.AutoSize = True
+        HomePageLabel.Location = New System.Drawing.Point(42, 207)
+        HomePageLabel.Name = "HomePageLabel"
+        HomePageLabel.Size = New System.Drawing.Size(66, 13)
+        HomePageLabel.TabIndex = 28
+        HomePageLabel.Text = "Home Page:"
+        '
         'btnSpeichern
         '
         Me.btnSpeichern.Location = New System.Drawing.Point(525, 232)
@@ -205,15 +241,6 @@ Partial Class frmEditKontakt
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Adressdaten"
         '
-        'EmailFirmaLabel
-        '
-        EmailFirmaLabel.AutoSize = True
-        EmailFirmaLabel.Location = New System.Drawing.Point(45, 151)
-        EmailFirmaLabel.Name = "EmailFirmaLabel"
-        EmailFirmaLabel.Size = New System.Drawing.Size(63, 13)
-        EmailFirmaLabel.TabIndex = 25
-        EmailFirmaLabel.Text = "Email Firma:"
-        '
         'EmailFirmaTextEdit
         '
         Me.EmailFirmaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "EmailFirma", True))
@@ -221,15 +248,6 @@ Partial Class frmEditKontakt
         Me.EmailFirmaTextEdit.Name = "EmailFirmaTextEdit"
         Me.EmailFirmaTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.EmailFirmaTextEdit.TabIndex = 26
-        '
-        'EmailPrivatLabel
-        '
-        EmailPrivatLabel.AutoSize = True
-        EmailPrivatLabel.Location = New System.Drawing.Point(43, 181)
-        EmailPrivatLabel.Name = "EmailPrivatLabel"
-        EmailPrivatLabel.Size = New System.Drawing.Size(65, 13)
-        EmailPrivatLabel.TabIndex = 26
-        EmailPrivatLabel.Text = "Email Privat:"
         '
         'EmailPrivatTextEdit
         '
@@ -239,15 +257,6 @@ Partial Class frmEditKontakt
         Me.EmailPrivatTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.EmailPrivatTextEdit.TabIndex = 27
         '
-        'TelefonLabel
-        '
-        TelefonLabel.AutoSize = True
-        TelefonLabel.Location = New System.Drawing.Point(62, 92)
-        TelefonLabel.Name = "TelefonLabel"
-        TelefonLabel.Size = New System.Drawing.Size(46, 13)
-        TelefonLabel.TabIndex = 27
-        TelefonLabel.Text = "Telefon:"
-        '
         'TelefonTextEdit
         '
         Me.TelefonTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "Telefon", True))
@@ -255,15 +264,6 @@ Partial Class frmEditKontakt
         Me.TelefonTextEdit.Name = "TelefonTextEdit"
         Me.TelefonTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.TelefonTextEdit.TabIndex = 28
-        '
-        'HomePageLabel
-        '
-        HomePageLabel.AutoSize = True
-        HomePageLabel.Location = New System.Drawing.Point(42, 207)
-        HomePageLabel.Name = "HomePageLabel"
-        HomePageLabel.Size = New System.Drawing.Size(66, 13)
-        HomePageLabel.TabIndex = 28
-        HomePageLabel.Text = "Home Page:"
         '
         'HomePageTextEdit
         '

@@ -51,4 +51,10 @@
         frm.ShowDialog()
         DataBind()
     End Sub
+
+    Private Sub BerufstitelToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BerufstitelToolStripMenuItem.Click
+        Dim frm As New frmBerufsTitel
+        frm.ShowDialog()
+        DataBind()
+    End Sub
 End Class

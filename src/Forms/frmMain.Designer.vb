@@ -52,6 +52,7 @@ Partial Class frmMain
         Me.EinstellungenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LänderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AkademischerTitelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BerufstitelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.grd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grdview, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,6 +91,7 @@ Partial Class frmMain
         Me.colID.Name = "colID"
         Me.colID.Visible = True
         Me.colID.VisibleIndex = 0
+        Me.colID.Width = 52
         '
         'colVorName
         '
@@ -97,6 +99,7 @@ Partial Class frmMain
         Me.colVorName.Name = "colVorName"
         Me.colVorName.Visible = True
         Me.colVorName.VisibleIndex = 1
+        Me.colVorName.Width = 52
         '
         'colNachName
         '
@@ -104,6 +107,7 @@ Partial Class frmMain
         Me.colNachName.Name = "colNachName"
         Me.colNachName.Visible = True
         Me.colNachName.VisibleIndex = 2
+        Me.colNachName.Width = 52
         '
         'colFK_Land
         '
@@ -111,6 +115,7 @@ Partial Class frmMain
         Me.colFK_Land.Name = "colFK_Land"
         Me.colFK_Land.Visible = True
         Me.colFK_Land.VisibleIndex = 3
+        Me.colFK_Land.Width = 52
         '
         'colFK_Anrede
         '
@@ -118,6 +123,7 @@ Partial Class frmMain
         Me.colFK_Anrede.Name = "colFK_Anrede"
         Me.colFK_Anrede.Visible = True
         Me.colFK_Anrede.VisibleIndex = 4
+        Me.colFK_Anrede.Width = 52
         '
         'colFK_AkademischerTitel
         '
@@ -125,6 +131,7 @@ Partial Class frmMain
         Me.colFK_AkademischerTitel.Name = "colFK_AkademischerTitel"
         Me.colFK_AkademischerTitel.Visible = True
         Me.colFK_AkademischerTitel.VisibleIndex = 5
+        Me.colFK_AkademischerTitel.Width = 52
         '
         'colFK_Berufstitel
         '
@@ -132,6 +139,7 @@ Partial Class frmMain
         Me.colFK_Berufstitel.Name = "colFK_Berufstitel"
         Me.colFK_Berufstitel.Visible = True
         Me.colFK_Berufstitel.VisibleIndex = 7
+        Me.colFK_Berufstitel.Width = 76
         '
         'colFK_Berufsfunktion
         '
@@ -139,6 +147,7 @@ Partial Class frmMain
         Me.colFK_Berufsfunktion.Name = "colFK_Berufsfunktion"
         Me.colFK_Berufsfunktion.Visible = True
         Me.colFK_Berufsfunktion.VisibleIndex = 8
+        Me.colFK_Berufsfunktion.Width = 49
         '
         'colFK_Firma
         '
@@ -146,6 +155,7 @@ Partial Class frmMain
         Me.colFK_Firma.Name = "colFK_Firma"
         Me.colFK_Firma.Visible = True
         Me.colFK_Firma.VisibleIndex = 9
+        Me.colFK_Firma.Width = 49
         '
         'colFK_Institution
         '
@@ -153,6 +163,7 @@ Partial Class frmMain
         Me.colFK_Institution.Name = "colFK_Institution"
         Me.colFK_Institution.Visible = True
         Me.colFK_Institution.VisibleIndex = 10
+        Me.colFK_Institution.Width = 49
         '
         'colTelefon
         '
@@ -160,6 +171,7 @@ Partial Class frmMain
         Me.colTelefon.Name = "colTelefon"
         Me.colTelefon.Visible = True
         Me.colTelefon.VisibleIndex = 11
+        Me.colTelefon.Width = 49
         '
         'colMobilTelefon
         '
@@ -167,6 +179,7 @@ Partial Class frmMain
         Me.colMobilTelefon.Name = "colMobilTelefon"
         Me.colMobilTelefon.Visible = True
         Me.colMobilTelefon.VisibleIndex = 12
+        Me.colMobilTelefon.Width = 49
         '
         'colAdresseStrasse
         '
@@ -174,6 +187,7 @@ Partial Class frmMain
         Me.colAdresseStrasse.Name = "colAdresseStrasse"
         Me.colAdresseStrasse.Visible = True
         Me.colAdresseStrasse.VisibleIndex = 13
+        Me.colAdresseStrasse.Width = 49
         '
         'colAdresseOrt
         '
@@ -181,6 +195,7 @@ Partial Class frmMain
         Me.colAdresseOrt.Name = "colAdresseOrt"
         Me.colAdresseOrt.Visible = True
         Me.colAdresseOrt.VisibleIndex = 14
+        Me.colAdresseOrt.Width = 49
         '
         'colAdressePLZ
         '
@@ -188,6 +203,7 @@ Partial Class frmMain
         Me.colAdressePLZ.Name = "colAdressePLZ"
         Me.colAdressePLZ.Visible = True
         Me.colAdressePLZ.VisibleIndex = 15
+        Me.colAdressePLZ.Width = 49
         '
         'colEmailPrivat
         '
@@ -195,6 +211,7 @@ Partial Class frmMain
         Me.colEmailPrivat.Name = "colEmailPrivat"
         Me.colEmailPrivat.Visible = True
         Me.colEmailPrivat.VisibleIndex = 16
+        Me.colEmailPrivat.Width = 49
         '
         'colEmailFirma
         '
@@ -202,6 +219,7 @@ Partial Class frmMain
         Me.colEmailFirma.Name = "colEmailFirma"
         Me.colEmailFirma.Visible = True
         Me.colEmailFirma.VisibleIndex = 17
+        Me.colEmailFirma.Width = 49
         '
         'colHomePage
         '
@@ -209,6 +227,7 @@ Partial Class frmMain
         Me.colHomePage.Name = "colHomePage"
         Me.colHomePage.Visible = True
         Me.colHomePage.VisibleIndex = 18
+        Me.colHomePage.Width = 71
         '
         'colFirmas
         '
@@ -217,6 +236,7 @@ Partial Class frmMain
         Me.colFirmas.Name = "colFirmas"
         Me.colFirmas.Visible = True
         Me.colFirmas.VisibleIndex = 6
+        Me.colFirmas.Width = 52
         '
         'MenuStrip1
         '
@@ -248,7 +268,7 @@ Partial Class frmMain
         '
         'EinstellungenToolStripMenuItem
         '
-        Me.EinstellungenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LänderToolStripMenuItem, Me.AkademischerTitelToolStripMenuItem})
+        Me.EinstellungenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LänderToolStripMenuItem, Me.AkademischerTitelToolStripMenuItem, Me.BerufstitelToolStripMenuItem})
         Me.EinstellungenToolStripMenuItem.Name = "EinstellungenToolStripMenuItem"
         Me.EinstellungenToolStripMenuItem.Size = New System.Drawing.Size(90, 20)
         Me.EinstellungenToolStripMenuItem.Text = "Einstellungen"
@@ -264,6 +284,12 @@ Partial Class frmMain
         Me.AkademischerTitelToolStripMenuItem.Name = "AkademischerTitelToolStripMenuItem"
         Me.AkademischerTitelToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
         Me.AkademischerTitelToolStripMenuItem.Text = "Akademischer Titel"
+        '
+        'BerufstitelToolStripMenuItem
+        '
+        Me.BerufstitelToolStripMenuItem.Name = "BerufstitelToolStripMenuItem"
+        Me.BerufstitelToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.BerufstitelToolStripMenuItem.Text = "Berufstitel"
         '
         'frmMain
         '
@@ -314,5 +340,6 @@ Partial Class frmMain
     Friend WithEvents EinstellungenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LänderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AkademischerTitelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BerufstitelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

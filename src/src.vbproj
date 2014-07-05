@@ -217,6 +217,10 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>db.Designer.vb</LastGenOutput>
     </EntityDeploy>
+    <None Include="Connection.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="DB\db.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>db.edmx</DependentUpon>

@@ -22,9 +22,10 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.grd = New DevExpress.XtraGrid.GridControl()
-        Me.KontaktBindingSource = New System.Windows.Forms.BindingSource()
+        Me.KontaktBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.grdview = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colID = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colVorName = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -52,6 +53,7 @@ Partial Class frmMain
         Me.EinstellungenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LänderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AkademischerTitelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.BerufstitelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.grd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,7 +113,8 @@ Partial Class frmMain
         '
         'colFK_Land
         '
-        Me.colFK_Land.FieldName = "FK_Land"
+        Me.colFK_Land.Caption = "Land"
+        Me.colFK_Land.FieldName = "Land.Kuerzel"
         Me.colFK_Land.Name = "colFK_Land"
         Me.colFK_Land.Visible = True
         Me.colFK_Land.VisibleIndex = 3
@@ -285,11 +288,26 @@ Partial Class frmMain
         Me.AkademischerTitelToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
         Me.AkademischerTitelToolStripMenuItem.Text = "Akademischer Titel"
         '
-        'BerufstitelToolStripMenuItem
+       'BerufstitelToolStripMenuItem
         '
         Me.BerufstitelToolStripMenuItem.Name = "BerufstitelToolStripMenuItem"
         Me.BerufstitelToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
         Me.BerufstitelToolStripMenuItem.Text = "Berufstitel"
+        '
+
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(956, 48)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Reload"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+
+        Me.Button1.Text = "Reload"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmMain
         '
@@ -297,6 +315,7 @@ Partial Class frmMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1043, 617)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.grd)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -341,5 +360,6 @@ Partial Class frmMain
     Friend WithEvents LänderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AkademischerTitelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BerufstitelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class

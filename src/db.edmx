@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AkademischerTitel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AkademischerTitel" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Anrede">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Anrede" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Berufsfunktion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Berufsfunktion" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Berufstitel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Berufstitel" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Firma">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Firma" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Institution">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Institution" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kontakt">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VorName" Type="varchar" MaxLength="120" />
+          <Property Name="NachName" Type="varchar" MaxLength="120" />
+          <Property Name="FK_Land" Type="int" />
+          <Property Name="FK_Anrede" Type="int" />
+          <Property Name="FK_AkademischerTitel" Type="int" />
+          <Property Name="FK_Berufstitel" Type="int" />
+          <Property Name="FK_Berufsfunktion" Type="int" />
+          <Property Name="FK_Firma" Type="int" />
+          <Property Name="FK_Institution" Type="int" />
+          <Property Name="Telefon" Type="varchar" MaxLength="50" />
+          <Property Name="MobilTelefon" Type="varchar" MaxLength="50" />
+          <Property Name="AdresseStrasse" Type="varchar" MaxLength="120" />
+          <Property Name="AdresseOrt" Type="varchar" MaxLength="50" />
+          <Property Name="AdressePLZ" Type="varchar" MaxLength="10" />
+          <Property Name="EmailPrivat" Type="varchar" MaxLength="50" />
+          <Property Name="EmailFirma" Type="varchar" MaxLength="50" />
+          <Property Name="HomePage" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Land">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kuerzel" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Bezeichnung" Type="varchar" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dbStoreContainer">
+          <EntitySet Name="AkademischerTitel" EntityType="Self.AkademischerTitel" Schema="openAB" store:Type="Tables" />
+          <EntitySet Name="Anrede" EntityType="Self.Anrede" Schema="openAB" store:Type="Tables" />
+          <EntitySet Name="Berufsfunktion" EntityType="Self.Berufsfunktion" Schema="openAB" store:Type="Tables" />
+          <EntitySet Name="Berufstitel" EntityType="Self.Berufstitel" Schema="openAB" store:Type="Tables" />
+          <EntitySet Name="Firma" EntityType="Self.Firma" Schema="openAB" store:Type="Tables" />
+          <EntitySet Name="Institution" EntityType="Self.Institution" Schema="openAB" store:Type="Tables" />
+          <EntitySet Name="Kontakt" EntityType="Self.Kontakt" Schema="openAB" store:Type="Tables" />
+          <EntitySet Name="Land" EntityType="Self.Land" Schema="openAB" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AkademischerTitel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AkademischerTitel1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Anrede">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Anrede1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Berufsfunktion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Berufsfunktion1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Berufstitel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Berufstitel1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Firma">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Firma1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Kontakt" Relationship="db.FirmaKontakt" FromRole="Firma" ToRole="Kontakt" />
+        </EntityType>
+        <EntityType Name="Institution">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Institution1" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kontakt">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VorName" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="NachName" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="FK_Land" Type="Int32" />
+          <Property Name="FK_Anrede" Type="Int32" />
+          <Property Name="FK_AkademischerTitel" Type="Int32" />
+          <Property Name="FK_Berufstitel" Type="Int32" />
+          <Property Name="FK_Berufsfunktion" Type="Int32" />
+          <Property Name="FK_Firma" Type="Int32" />
+          <Property Name="FK_Institution" Type="Int32" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MobilTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AdresseStrasse" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="AdresseOrt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AdressePLZ" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EmailPrivat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailFirma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HomePage" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Firmas" Relationship="db.FirmaKontakt" FromRole="Kontakt" ToRole="Firma" />
+        </EntityType>
+        <EntityType Name="Land">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kuerzel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Bezeichnung" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="openABEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AkademischerTitels" EntityType="Self.AkademischerTitel" />
+          <EntitySet Name="Anredes" EntityType="Self.Anrede" />
+          <EntitySet Name="Berufsfunktions" EntityType="Self.Berufsfunktion" />
+          <EntitySet Name="Berufstitels" EntityType="Self.Berufstitel" />
+          <EntitySet Name="Firmas" EntityType="Self.Firma" />
+          <EntitySet Name="Institutions" EntityType="Self.Institution" />
+          <EntitySet Name="Kontakts" EntityType="Self.Kontakt" />
+          <EntitySet Name="Lands" EntityType="Self.Land" />
+          <AssociationSet Name="FirmaKontakt" Association="db.FirmaKontakt">
+            <End Role="Firma" EntitySet="Firmas" />
+            <End Role="Kontakt" EntitySet="Kontakts" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FirmaKontakt">
+          <End Type="db.Firma" Role="Firma" Multiplicity="0..1" />
+          <End Type="db.Kontakt" Role="Kontakt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firma">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kontakt">
+              <PropertyRef Name="FK_Firma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbStoreContainer" CdmEntityContainer="openABEntities">
+          <EntitySetMapping Name="AkademischerTitels">
+            <EntityTypeMapping TypeName="db.AkademischerTitel">
+              <MappingFragment StoreEntitySet="AkademischerTitel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AkademischerTitel1" ColumnName="AkademischerTitel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Anredes">
+            <EntityTypeMapping TypeName="db.Anrede">
+              <MappingFragment StoreEntitySet="Anrede">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Anrede1" ColumnName="Anrede" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Berufsfunktions">
+            <EntityTypeMapping TypeName="db.Berufsfunktion">
+              <MappingFragment StoreEntitySet="Berufsfunktion">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Berufsfunktion1" ColumnName="Berufsfunktion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Berufstitels">
+            <EntityTypeMapping TypeName="db.Berufstitel">
+              <MappingFragment StoreEntitySet="Berufstitel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Berufstitel1" ColumnName="Berufstitel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Firmas">
+            <EntityTypeMapping TypeName="db.Firma">
+              <MappingFragment StoreEntitySet="Firma">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Firma1" ColumnName="Firma" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Institutions">
+            <EntityTypeMapping TypeName="db.Institution">
+              <MappingFragment StoreEntitySet="Institution">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Institution1" ColumnName="Institution" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kontakts">
+            <EntityTypeMapping TypeName="db.Kontakt">
+              <MappingFragment StoreEntitySet="Kontakt">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VorName" ColumnName="VorName" />
+                <ScalarProperty Name="NachName" ColumnName="NachName" />
+                <ScalarProperty Name="FK_Land" ColumnName="FK_Land" />
+                <ScalarProperty Name="FK_Anrede" ColumnName="FK_Anrede" />
+                <ScalarProperty Name="FK_AkademischerTitel" ColumnName="FK_AkademischerTitel" />
+                <ScalarProperty Name="FK_Berufstitel" ColumnName="FK_Berufstitel" />
+                <ScalarProperty Name="FK_Berufsfunktion" ColumnName="FK_Berufsfunktion" />
+                <ScalarProperty Name="FK_Firma" ColumnName="FK_Firma" />
+                <ScalarProperty Name="FK_Institution" ColumnName="FK_Institution" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="MobilTelefon" ColumnName="MobilTelefon" />
+                <ScalarProperty Name="AdresseStrasse" ColumnName="AdresseStrasse" />
+                <ScalarProperty Name="AdresseOrt" ColumnName="AdresseOrt" />
+                <ScalarProperty Name="AdressePLZ" ColumnName="AdressePLZ" />
+                <ScalarProperty Name="EmailPrivat" ColumnName="EmailPrivat" />
+                <ScalarProperty Name="EmailFirma" ColumnName="EmailFirma" />
+                <ScalarProperty Name="HomePage" ColumnName="HomePage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lands">
+            <EntityTypeMapping TypeName="db.Land">
+              <MappingFragment StoreEntitySet="Land">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Kuerzel" ColumnName="Kuerzel" />
+                <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

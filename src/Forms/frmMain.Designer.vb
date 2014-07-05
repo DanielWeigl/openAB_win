@@ -26,7 +26,7 @@ Partial Class frmMain
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.grd = New DevExpress.XtraGrid.GridControl()
         Me.KontaktBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.grdview = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colID = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colVorName = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colNachName = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -52,7 +52,7 @@ Partial Class frmMain
         Me.NeuenKontaktErstellenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.grd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grdview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -63,24 +63,24 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grd.Cursor = System.Windows.Forms.Cursors.Default
         Me.grd.DataSource = Me.KontaktBindingSource
-        Me.grd.Location = New System.Drawing.Point(12, 142)
-        Me.grd.MainView = Me.GridView1
+        Me.grd.Location = New System.Drawing.Point(12, 77)
+        Me.grd.MainView = Me.grdview
         Me.grd.Name = "grd"
-        Me.grd.Size = New System.Drawing.Size(1065, 407)
+        Me.grd.Size = New System.Drawing.Size(1019, 528)
         Me.grd.TabIndex = 0
-        Me.grd.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.grd.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grdview})
         '
         'KontaktBindingSource
         '
         Me.KontaktBindingSource.DataSource = GetType(src.Kontakt)
         '
-        'GridView1
+        'grdview
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colID, Me.colVorName, Me.colNachName, Me.colFK_Land, Me.colFK_Anrede, Me.colFK_AkademischerTitel, Me.colFK_Berufstitel, Me.colFK_Berufsfunktion, Me.colFK_Firma, Me.colFK_Institution, Me.colTelefon, Me.colMobilTelefon, Me.colAdresseStrasse, Me.colAdresseOrt, Me.colAdressePLZ, Me.colEmailPrivat, Me.colEmailFirma, Me.colHomePage, Me.colFirmas})
-        Me.GridView1.GridControl = Me.grd
-        Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsView.ShowAutoFilterRow = True
-        Me.GridView1.OptionsView.ShowGroupPanel = False
+        Me.grdview.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colID, Me.colVorName, Me.colNachName, Me.colFK_Land, Me.colFK_Anrede, Me.colFK_AkademischerTitel, Me.colFK_Berufstitel, Me.colFK_Berufsfunktion, Me.colFK_Firma, Me.colFK_Institution, Me.colTelefon, Me.colMobilTelefon, Me.colAdresseStrasse, Me.colAdresseOrt, Me.colAdressePLZ, Me.colEmailPrivat, Me.colEmailFirma, Me.colHomePage, Me.colFirmas})
+        Me.grdview.GridControl = Me.grd
+        Me.grdview.Name = "grdview"
+        Me.grdview.OptionsView.ShowAutoFilterRow = True
+        Me.grdview.OptionsView.ShowGroupPanel = False
         '
         'colID
         '
@@ -221,7 +221,7 @@ Partial Class frmMain
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem, Me.KontaktToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1089, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1043, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -249,7 +249,7 @@ Partial Class frmMain
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1089, 561)
+        Me.ClientSize = New System.Drawing.Size(1043, 617)
         Me.Controls.Add(Me.grd)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -257,7 +257,7 @@ Partial Class frmMain
         Me.Text = "Adress Manager"
         CType(Me.grd, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grdview, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -265,7 +265,7 @@ Partial Class frmMain
 
     End Sub
     Friend WithEvents grd As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents grdview As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents KontaktBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents colID As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colVorName As DevExpress.XtraGrid.Columns.GridColumn

@@ -154,6 +154,7 @@
     <Compile Include="DB\Land.vb">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="lib\ObservableListSource.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

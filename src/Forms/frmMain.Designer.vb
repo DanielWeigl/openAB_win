@@ -22,10 +22,9 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.grd = New DevExpress.XtraGrid.GridControl()
-        Me.KontaktBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.KontaktBindingSource = New System.Windows.Forms.BindingSource()
         Me.grdview = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colID = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colVorName = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -50,6 +49,8 @@ Partial Class frmMain
         Me.DateiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KontaktToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NeuenKontaktErstellenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EinstellungenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LänderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.grd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grdview, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -218,7 +219,7 @@ Partial Class frmMain
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem, Me.KontaktToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateiToolStripMenuItem, Me.KontaktToolStripMenuItem, Me.EinstellungenToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1043, 24)
@@ -243,6 +244,19 @@ Partial Class frmMain
         Me.NeuenKontaktErstellenToolStripMenuItem.Name = "NeuenKontaktErstellenToolStripMenuItem"
         Me.NeuenKontaktErstellenToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
         Me.NeuenKontaktErstellenToolStripMenuItem.Text = "Neuen Kontakt erstellen"
+        '
+        'EinstellungenToolStripMenuItem
+        '
+        Me.EinstellungenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LänderToolStripMenuItem})
+        Me.EinstellungenToolStripMenuItem.Name = "EinstellungenToolStripMenuItem"
+        Me.EinstellungenToolStripMenuItem.Size = New System.Drawing.Size(90, 20)
+        Me.EinstellungenToolStripMenuItem.Text = "Einstellungen"
+        '
+        'LänderToolStripMenuItem
+        '
+        Me.LänderToolStripMenuItem.Name = "LänderToolStripMenuItem"
+        Me.LänderToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LänderToolStripMenuItem.Text = "Länder"
         '
         'frmMain
         '
@@ -290,5 +304,7 @@ Partial Class frmMain
     Friend WithEvents DateiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KontaktToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NeuenKontaktErstellenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EinstellungenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LänderToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

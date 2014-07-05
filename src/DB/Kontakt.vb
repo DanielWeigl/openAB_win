@@ -31,5 +31,11 @@ Partial Public Class Kontakt
     Public Property HomePage As String
 
     Public Overridable Property Firmas As Firma
+    Public Overridable Property AkademischerTitel As AkademischerTitel
+    Public Overridable Property Anrede As Anrede
+    Public Overridable Property Institution As Institution
+    Public Overridable Property Berufstitel As Berufstitel
+    Public Overridable Property Berufsfunktion As Berufsfunktion
+    Public Overridable Property Land As Land
 
 End Class

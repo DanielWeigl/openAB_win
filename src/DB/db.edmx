@@ -99,6 +99,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AkademischerTitel1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Kontakts" Relationship="db.AkademischerTitelKontakt" FromRole="AkademischerTitel" ToRole="Kontakt" />
         </EntityType>
         <EntityType Name="Anrede">
           <Key>
@@ -106,6 +107,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Anrede1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Kontakts" Relationship="db.AnredeKontakt" FromRole="Anrede" ToRole="Kontakt" />
         </EntityType>
         <EntityType Name="Berufsfunktion">
           <Key>
@@ -113,6 +115,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Berufsfunktion1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Kontakts" Relationship="db.BerufsfunktionKontakt" FromRole="Berufsfunktion" ToRole="Kontakt" />
         </EntityType>
         <EntityType Name="Berufstitel">
           <Key>
@@ -120,6 +123,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Berufstitel1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Kontakts" Relationship="db.BerufstitelKontakt" FromRole="Berufstitel" ToRole="Kontakt" />
         </EntityType>
         <EntityType Name="Firma">
           <Key>
@@ -135,6 +139,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Institution1" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Kontakts" Relationship="db.InstitutionKontakt" FromRole="Institution" ToRole="Kontakt" />
         </EntityType>
         <EntityType Name="Kontakt">
           <Key>
@@ -159,6 +164,12 @@
           <Property Name="EmailFirma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="HomePage" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Firmas" Relationship="db.FirmaKontakt" FromRole="Kontakt" ToRole="Firma" />
+          <NavigationProperty Name="AkademischerTitel" Relationship="db.AkademischerTitelKontakt" FromRole="Kontakt" ToRole="AkademischerTitel" />
+          <NavigationProperty Name="Anrede" Relationship="db.AnredeKontakt" FromRole="Kontakt" ToRole="Anrede" />
+          <NavigationProperty Name="Institution" Relationship="db.InstitutionKontakt" FromRole="Kontakt" ToRole="Institution" />
+          <NavigationProperty Name="Berufstitel" Relationship="db.BerufstitelKontakt" FromRole="Kontakt" ToRole="Berufstitel" />
+          <NavigationProperty Name="Berufsfunktion" Relationship="db.BerufsfunktionKontakt" FromRole="Kontakt" ToRole="Berufsfunktion" />
+          <NavigationProperty Name="Land" Relationship="db.LandKontakt" FromRole="Kontakt" ToRole="Land" />
         </EntityType>
         <EntityType Name="Land">
           <Key>
@@ -167,6 +178,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Kuerzel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Bezeichnung" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Kontakts" Relationship="db.LandKontakt" FromRole="Land" ToRole="Kontakt" />
         </EntityType>
         <EntityContainer Name="openABEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AkademischerTitels" EntityType="Self.AkademischerTitel" />
@@ -181,6 +193,30 @@
             <End Role="Firma" EntitySet="Firmas" />
             <End Role="Kontakt" EntitySet="Kontakts" />
           </AssociationSet>
+          <AssociationSet Name="AkademischerTitelKontakt" Association="db.AkademischerTitelKontakt">
+            <End Role="AkademischerTitel" EntitySet="AkademischerTitels" />
+            <End Role="Kontakt" EntitySet="Kontakts" />
+          </AssociationSet>
+          <AssociationSet Name="AnredeKontakt" Association="db.AnredeKontakt">
+            <End Role="Anrede" EntitySet="Anredes" />
+            <End Role="Kontakt" EntitySet="Kontakts" />
+          </AssociationSet>
+          <AssociationSet Name="InstitutionKontakt" Association="db.InstitutionKontakt">
+            <End Role="Institution" EntitySet="Institutions" />
+            <End Role="Kontakt" EntitySet="Kontakts" />
+          </AssociationSet>
+          <AssociationSet Name="BerufstitelKontakt" Association="db.BerufstitelKontakt">
+            <End Role="Berufstitel" EntitySet="Berufstitels" />
+            <End Role="Kontakt" EntitySet="Kontakts" />
+          </AssociationSet>
+          <AssociationSet Name="BerufsfunktionKontakt" Association="db.BerufsfunktionKontakt">
+            <End Role="Berufsfunktion" EntitySet="Berufsfunktions" />
+            <End Role="Kontakt" EntitySet="Kontakts" />
+          </AssociationSet>
+          <AssociationSet Name="LandKontakt" Association="db.LandKontakt">
+            <End Role="Land" EntitySet="Lands" />
+            <End Role="Kontakt" EntitySet="Kontakts" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FirmaKontakt">
           <End Type="db.Firma" Role="Firma" Multiplicity="0..1" />
@@ -191,6 +227,78 @@
             </Principal>
             <Dependent Role="Kontakt">
               <PropertyRef Name="FK_Firma" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AkademischerTitelKontakt">
+          <End Type="db.AkademischerTitel" Role="AkademischerTitel" Multiplicity="0..1" />
+          <End Type="db.Kontakt" Role="Kontakt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AkademischerTitel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kontakt">
+              <PropertyRef Name="FK_AkademischerTitel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AnredeKontakt">
+          <End Type="db.Anrede" Role="Anrede" Multiplicity="0..1" />
+          <End Type="db.Kontakt" Role="Kontakt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Anrede">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kontakt">
+              <PropertyRef Name="FK_Anrede" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="InstitutionKontakt">
+          <End Type="db.Institution" Role="Institution" Multiplicity="0..1" />
+          <End Type="db.Kontakt" Role="Kontakt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Institution">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kontakt">
+              <PropertyRef Name="FK_Institution" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BerufstitelKontakt">
+          <End Type="db.Berufstitel" Role="Berufstitel" Multiplicity="0..1" />
+          <End Type="db.Kontakt" Role="Kontakt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Berufstitel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kontakt">
+              <PropertyRef Name="FK_Berufstitel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BerufsfunktionKontakt">
+          <End Type="db.Berufsfunktion" Role="Berufsfunktion" Multiplicity="0..1" />
+          <End Type="db.Kontakt" Role="Kontakt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Berufsfunktion">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kontakt">
+              <PropertyRef Name="FK_Berufsfunktion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LandKontakt">
+          <End Type="db.Land" Role="Land" Multiplicity="0..1" />
+          <End Type="db.Kontakt" Role="Kontakt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Land">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kontakt">
+              <PropertyRef Name="FK_Land" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

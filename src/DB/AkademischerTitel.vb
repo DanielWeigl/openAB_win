@@ -14,4 +14,6 @@ Partial Public Class AkademischerTitel
     Public Property ID As Integer
     Public Property AkademischerTitel1 As String
 
+    Public Overridable Property Kontakts As ICollection(Of Kontakt) = New HashSet(Of Kontakt)
+
 End Class

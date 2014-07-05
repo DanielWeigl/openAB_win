@@ -132,6 +132,21 @@
     <Compile Include="DB\Firma.vb">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\Institution.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Kontakt.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Land.vb">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Einstellungen\frmLaender.Designer.vb">
+      <DependentUpon>frmLaender.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Einstellungen\frmLaender.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmEditKontakt.Designer.vb">
       <DependentUpon>frmEditKontakt.vb</DependentUpon>
     </Compile>
@@ -144,15 +159,6 @@
     <Compile Include="Forms\frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DB\Institution.vb">
-      <DependentUpon>db.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Kontakt.vb">
-      <DependentUpon>db.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Land.vb">
-      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -171,6 +177,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Einstellungen\frmLaender.resx">
+      <DependentUpon>frmLaender.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEditKontakt.resx">
       <DependentUpon>frmEditKontakt.vb</DependentUpon>
     </EmbeddedResource>
@@ -207,7 +216,14 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\AkademischerTitel.datasource" />
+    <None Include="My Project\DataSources\Anrede.datasource" />
+    <None Include="My Project\DataSources\Berufsfunktion.datasource" />
+    <None Include="My Project\DataSources\Berufstitel.datasource" />
+    <None Include="My Project\DataSources\Firma.datasource" />
+    <None Include="My Project\DataSources\Institution.datasource" />
     <None Include="My Project\DataSources\Kontakt.datasource" />
+    <None Include="My Project\DataSources\Land.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -224,6 +240,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bilder\ueberuns03.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

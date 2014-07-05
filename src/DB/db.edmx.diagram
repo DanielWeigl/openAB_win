@@ -14,6 +14,12 @@
         <EntityTypeShape EntityType="db.Kontakt" Width="1.5" PointX="7.875" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="db.Land" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <AssociationConnector Association="db.FirmaKontakt" />
+        <AssociationConnector Association="db.AkademischerTitelKontakt" />
+        <AssociationConnector Association="db.AnredeKontakt" />
+        <AssociationConnector Association="db.InstitutionKontakt" />
+        <AssociationConnector Association="db.BerufstitelKontakt" />
+        <AssociationConnector Association="db.BerufsfunktionKontakt" />
+        <AssociationConnector Association="db.LandKontakt" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -8,6 +8,31 @@
     End Sub
 
     Private Sub NeuenKontaktErstellenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NeuenKontaktErstellenToolStripMenuItem.Click
-        frmEditKontakt.Show()
+        Using ctx = New openABEntities
+            Dim neu As New Kontakt
+            Dim frm As New frmEditKontakt(neu)
+
+            If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+                ctx.Kontakts.Add(neu)
+                ctx.SaveChanges()
+                grd.RefreshDataSource()
+            End If
+
+        End Using
+    End Sub
+
+    Private Sub grd_DoubleClick(sender As Object, e As EventArgs) Handles grdview.DoubleClick
+        Dim k As Kontakt = grdview.GetFocusedRow
+        If k IsNot Nothing Then
+            Using ctx = New openABEntities
+                Dim frm As New frmEditKontakt(k)
+
+                If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+                    ctx.SaveChanges()
+                    grd.RefreshDataSource()
+                End If
+
+            End Using
+        End If
     End Sub
 End Class

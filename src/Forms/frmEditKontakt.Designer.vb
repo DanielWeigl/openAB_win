@@ -23,6 +23,8 @@ Partial Class frmEditKontakt
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim AdresseOrtLabel As System.Windows.Forms.Label
+        Dim VorNameLabel As System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbName = New System.Windows.Forms.TextBox()
         Me.KontaktBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -38,7 +40,13 @@ Partial Class frmEditKontakt
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.AdresseOrtTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.VorNameTextEdit = New DevExpress.XtraEditors.TextEdit()
+        AdresseOrtLabel = New System.Windows.Forms.Label()
+        VorNameLabel = New System.Windows.Forms.Label()
         CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AdresseOrtTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VorNameTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -160,11 +168,49 @@ Partial Class frmEditKontakt
         Me.TextBox5.Size = New System.Drawing.Size(169, 20)
         Me.TextBox5.TabIndex = 13
         '
+        'AdresseOrtLabel
+        '
+        AdresseOrtLabel.AutoSize = True
+        AdresseOrtLabel.Location = New System.Drawing.Point(407, 111)
+        AdresseOrtLabel.Name = "AdresseOrtLabel"
+        AdresseOrtLabel.Size = New System.Drawing.Size(65, 13)
+        AdresseOrtLabel.TabIndex = 14
+        AdresseOrtLabel.Text = "Adresse Ort:"
+        '
+        'AdresseOrtTextEdit
+        '
+        Me.AdresseOrtTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "AdresseOrt", True))
+        Me.AdresseOrtTextEdit.Location = New System.Drawing.Point(478, 108)
+        Me.AdresseOrtTextEdit.Name = "AdresseOrtTextEdit"
+        Me.AdresseOrtTextEdit.Size = New System.Drawing.Size(100, 20)
+        Me.AdresseOrtTextEdit.TabIndex = 15
+        '
+        'VorNameLabel
+        '
+        VorNameLabel.AutoSize = True
+        VorNameLabel.Location = New System.Drawing.Point(415, 137)
+        VorNameLabel.Name = "VorNameLabel"
+        VorNameLabel.Size = New System.Drawing.Size(57, 13)
+        VorNameLabel.TabIndex = 16
+        VorNameLabel.Text = "Vor Name:"
+        '
+        'VorNameTextEdit
+        '
+        Me.VorNameTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.KontaktBindingSource, "VorName", True))
+        Me.VorNameTextEdit.Location = New System.Drawing.Point(478, 134)
+        Me.VorNameTextEdit.Name = "VorNameTextEdit"
+        Me.VorNameTextEdit.Size = New System.Drawing.Size(100, 20)
+        Me.VorNameTextEdit.TabIndex = 17
+        '
         'frmEditKontakt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(644, 272)
+        Me.ClientSize = New System.Drawing.Size(679, 280)
+        Me.Controls.Add(VorNameLabel)
+        Me.Controls.Add(Me.VorNameTextEdit)
+        Me.Controls.Add(AdresseOrtLabel)
+        Me.Controls.Add(Me.AdresseOrtTextEdit)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox4)
@@ -182,6 +228,8 @@ Partial Class frmEditKontakt
         Me.Name = "frmEditKontakt"
         Me.Text = "Kontakt bearbeiten"
         CType(Me.KontaktBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AdresseOrtTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VorNameTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -201,4 +249,6 @@ Partial Class frmEditKontakt
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents AdresseOrtTextEdit As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents VorNameTextEdit As DevExpress.XtraEditors.TextEdit
 End Class
